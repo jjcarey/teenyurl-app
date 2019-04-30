@@ -10,6 +10,10 @@ import { Router } from '@angular/router';
 export class MainComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) {}
 
+  isAuthenticated() {
+    return this.authService.isAuthenticated();
+  }
+
   onLogout() {
     this.authService.logout();
     this.router.navigate(['/signin']);

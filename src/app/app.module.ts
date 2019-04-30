@@ -21,7 +21,7 @@ import { MainModule } from './main/main.module';
     AuthModule,
     MainModule,
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
