@@ -15,10 +15,10 @@ export class DataStorageService {
 
   storeRecipes() {
     const token = this.authService.getToken();
-    return this.http.put(
-      'https://teenyurl-app.firebaseio.com/recipes.json?auth=' + token,
-      this.recipeService.getRecipes()
-    );
+    // return this.http.put(
+    //   'https://teenyurl-app.firebaseio.com/recipes.json?auth=' + token,
+    //   this.recipeService.getRecipes()
+    // );
   }
 
   getRecipes() {
@@ -26,13 +26,13 @@ export class DataStorageService {
     this.http
       .get('https://teenyurl-app.firebaseio.com/recipes.json?auth=' + token)
       .subscribe((response: Response) => {
-        const recipes: Recipe[] = response.json();
-        for (const recipe of recipes) {
-          if (!recipe['ingredients']) {
-            recipe['ingredients'] = [];
-          }
-        }
-        this.recipeService.setRecipes(recipes);
+        // const recipes: Recipe[] = response.json();
+        // for (const recipe of recipes) {
+        //   if (!recipe['ingredients']) {
+        //     recipe['ingredients'] = [];
+        //   }
+        // }
+        // this.recipeService.setRecipes(recipes);
       });
   }
 }
