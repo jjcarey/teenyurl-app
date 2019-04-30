@@ -9,20 +9,8 @@ const routes: Routes = [
   {
     path: '',
     component: MainComponent,
-    // canActivate: [AuthGuard],
-    // children: [
-    //   { path: '', component: RecipeStartComponent },
-    //   { path: 'new', component: RecipeEditComponent, canActivate: [AuthGuard] },
-    //   { path: ':id', component: RecipeDetailComponent },
-    //   {
-    //     path: ':id/edit',
-    //     component: RecipeEditComponent,
-    //     canActivate: [AuthGuard],
-    //   },
-    // ],
+    canActivate: [AuthGuard],
   },
-  { path: 'signup', component: SignupComponent },
-  { path: 'signin', component: SigninComponent },
 ];
 
 @NgModule({

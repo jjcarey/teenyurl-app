@@ -5,10 +5,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { UrlCreateComponent } from './url-create/url-create.component';
 import { UrlListComponent } from './url-list/url-list.component';
+import { AuthService } from '../auth/auth.service';
 
 @NgModule({
   declarations: [UrlCreateComponent, UrlListComponent],
   imports: [CommonModule, RouterModule, ReactiveFormsModule],
-  providers: [],
+  providers: [AuthService],
 })
 export class MainModule {}
