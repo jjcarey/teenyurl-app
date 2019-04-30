@@ -1,3 +1,8 @@
-<p>
-  url-create works!
-</p>
+<div class="card">
+  <form (ngSubmit)="onAddItem(f)" #f="ngForm">
+    <div class="input">
+      <input type="text" id="urlString" class="form-control" name="urlString" ngModel required>
+    </div>
+    <button class="btn btn-primary btn-create" type="submit" [disabled]="!f.valid">Create URL</button>
+  </form>
+</div>

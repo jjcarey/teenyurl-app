@@ -1,16 +1,20 @@
-<div class="row">
-    <div class="col-sx-12 col-sm-10 col-md-8 col-offset-1 col-md-offset-2">
-      <form (ngSubmit)="onSignin(f)" #f="ngForm">
-          <div class="form-group">
-            <label for="email">User</label>
-            <input type="email" id="email" name="email" ngModel class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" ngModel class="form-control">
-          </div>
-          <button class="btn btn-primary" type="submit">Sign In</button>
-        </form>
-    </div>
+<div class="container-small">
+  <p>You need to sign in or sign up before continuing.</p>
+  <div class="card">
+    <h1 class="card-header">Sign In</h1>
+    <form (ngSubmit)="onSignin(f)" #f="ngForm">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" ngModel class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" ngModel class="form-control">
+      </div>
+      <button class="btn btn-primary" type="submit">Sign In</button>
+    </form>
+    <a class="btn btn-secondary" routerLink="/signup">Sign Up</a>
   </div>
+
+</div>
   

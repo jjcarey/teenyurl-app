@@ -1,3 +1,10 @@
-<p>
-  main works!
-</p>
+<div class="container-large">
+  <div class="header">
+    <h1>URLs</h1>
+    <ng-template [ngIf]="isAuthenticated()">
+      <a style="cursor: pointer;" (click)="onLogout()">Sign Out</a>
+    </ng-template>
+  </div>
+  <app-url-create></app-url-create>
+  <app-url-list></app-url-list>
+</div>

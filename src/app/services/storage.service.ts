@@ -1,38 +1,29 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
-// import { RecipeService } from '../recipes/recipe.service';
 
-// import { Recipe } from '../recipes/recipe.model';
 import { AuthService } from '../auth/auth.service';
+import { Shorten } from './shorten.model';
+import { Observable } from 'rxjs';
 
 @Injectable()
-export class DataStorageService {
-  constructor(
-    private http: Http,
-    // private recipeService: RecipeService,
-    private authService: AuthService
-  ) {}
+export class StorageService {
+  constructor(private http: Http, private authService: AuthService) {}
 
-  storeRecipes() {
+  setUrls(shortenUrlList: any) {
     const token = this.authService.getToken();
-    // return this.http.put(
-    //   'https://teenyurl-app.firebaseio.com/recipes.json?auth=' + token,
-    //   this.recipeService.getRecipes()
-    // );
+    return this.http.put(
+      'https://teenyurl-app.firebaseio.com/shortenurls.json?auth=' + token,
+      shortenUrlList
+    );
   }
 
-  getRecipes() {
+  getUrls(): any {
     const token = this.authService.getToken();
     this.http
-      .get('https://teenyurl-app.firebaseio.com/recipes.json?auth=' + token)
+      .get('https://teenyurl-app.firebaseio.com/shortenurls.json?auth=' + token)
       .subscribe((response: Response) => {
-        // const recipes: Recipe[] = response.json();
-        // for (const recipe of recipes) {
-        //   if (!recipe['ingredients']) {
-        //     recipe['ingredients'] = [];
-        //   }
-        // }
-        // this.recipeService.setRecipes(recipes);
+        const shorten: Shorten[] = response.json();
+        return shorten;
       });
   }
 }

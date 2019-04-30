@@ -1,3 +1,19 @@
-<p>
-  url-list works!
-</p>
+<div class="card">
+  
+  <table>
+    <thead>
+      <tr>
+        <th>Original URL</th>
+        <th>Tiny URL</th>
+        <th>Hit Count</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let urlItem of urlList">
+        <td>{{ urlItem.longUrl }}</td>
+        <td>{{ urlItem.shortUrl }}</td>
+        <td>{{ urlItem.hitCount }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
